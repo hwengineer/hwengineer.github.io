@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hardware Development Engineer with an interest for Open-Source
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+### Programming Languages
+-   C
+-   C++ / Qt
+-   Rust
+-   Python
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[alexander.ott.ottale@gmail.com](mailto:alexander.ott.ottale@gmail.com)
