@@ -2,6 +2,11 @@
 # This file contains configuration flags to customize your site
 #
 
+# _config.yaml
+graphviz:
+  options: "-Tsvg" # 'dot' command option
+  command: "dot"   # execute this string. specify full path to 'dot' if you need
+
 # Name of your site (displayed in the header)
 name: Alexander Ott
 
