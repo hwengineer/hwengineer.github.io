@@ -8,8 +8,9 @@ So there I was. Starting from scratch.
 ## arm-none-eabi
 
 A good thing : arm-none-eabi the *standard* compiler toolchain is in the Ubuntu 16.04 repos.
+(we will see we will need some headers from this toolchain)
 
-```bash
+```
 sudo apt-get install binutils-arm-none-eabi gcc-arm-none-eabi gdb-arm-none-eabi  libnewlib-arm-none-eabi libnewlib-arm-none-eabi
 ```
 
