@@ -7,6 +7,8 @@
 #  options: "-Tsvg" # 'dot' command option
 #  command: "dot"   # execute this string. specify full path to 'dot' if you need
 
+theme: minimal-mistakes-jekyll
+
 # Name of your site (displayed in the header)
 name: Alexander Ott
 
