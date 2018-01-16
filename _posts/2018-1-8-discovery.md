@@ -4,7 +4,7 @@ title: STM32F3Discovery-meson-example
 ---
 
 We now look at the first example project [STM32F3Discovery-meson-example](https://github.com/hwengineer/STM32F3Discovery-meson-example).
-It's for the [STM32F3Discovery](http://www.st.com/en/evaluation-tools/stm32f3discovery.html) Development Board from ST Semiconductor
+It's for the [STM32F3Discovery](http://www.st.com/en/evaluation-tools/stm32f3discovery.html) Development Board from ST Microelectronics
 
 ![STM32F3Discovery Development Board](http://www.st.com/content/ccc/fragment/product_related/rpn_information/board_photo/8e/9b/f4/fd/3f/3b/4a/e7/stm32f3discovery.jpg/files/stm32f3discovery.jpg/_jcr_content/translations/en.stm32f3discovery.jpg)
 
@@ -17,7 +17,7 @@ It's for the [STM32F3Discovery](http://www.st.com/en/evaluation-tools/stm32f3dis
 |   ├──...
 ├── STM32Cube-F3-meson   # official ST HAL / CMIS Driver
 |   ├──...
-├── .gdbinit
+├── .gdbinit             # init file for gdb
 ├── .gitignore
 ├── .gitmodules
 ├── meson.build          # meson configuration file
@@ -61,7 +61,7 @@ we need also a `cross-file` for defining the right compilers and special target 
 
 3.  init the build system
 
-        meson llvmbuild --cross-file=cross_file
+        meson llvmbuild --cross-file=cross_file.build
 
 4.  change to build directory
 

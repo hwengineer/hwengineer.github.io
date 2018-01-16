@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STM32F3Discovery-meson-example (deeper)
+title: STM32F3Discovery-meson-example (meson)
 ---
 
 We have to get deeper into meson!
@@ -97,7 +97,7 @@ this is equivalent to
 
 in a C file.
 
-Also we add the linkfiles and startup files to a variable. when we define paths with the file function meson will save the absolute file path.
+Also we have to add the linkfiles and startup files to a variable. When we define paths with the `files` function, meson will save the absolute file path.
 So we don't have to mess around with filenames when we concatenate `meson.build` files to create more complex projects.
 
 #### create linker flags
@@ -160,7 +160,7 @@ In the folder `STM32Cube-F3-meson` there is also a `meson.build` file.
 subdir('STM32Cube-F3-meson')
 ```
 with this command we tell meson to look in that directory for another `meson.build` file and execute it.
-All variables will be present in the *root* `meson.build` file
+All variables will be present in the *root meson.build* file
 
 #### define executable
 
@@ -180,9 +180,9 @@ It's mostly self explanatory. We create an output file with the name `main.elf`.
 We include all defined source files, the STM32Cube sources, the `main.c` and startupfiles.
 
 We use the compiler with the flags defined in `c_args` and afterwards link it with the flags from `link_args`.
-I added also the `-Wl,--gc-sections` this tells the compiler to use `garbage collection` and strips out unused code.
+I added also the `-Wl,--gc-sections` flag. This tells the compiler to use `garbage collection` and strips out unused code.
 
-Then we add the runtime dependencies saved in the `link_deps` variable. And last but not leas we tell the compiler where to look after header files.
+Then we add the runtime dependencies saved in the `link_deps` variable. And last but not leas we tell the compiler where to look for header files.
 
 
 #### custom targets
@@ -202,18 +202,3 @@ maindump = custom_target(
 ```
 
 I used this custom target make copies of the executable to different file formats and dump files.
-
-#### easier debugging
-On the last few lines i defined some runnable targets.
-
-```
-run_target('gdb',
-         command : [terminal, '--working-directory=@0@'.format(meson.source_root()), '-e', gdb, '-q', '@0@/main.elf'.format(meson.current_build_dir())])
-
-run_target('openocd',
-         command : [terminal, '-e', openocd, '-f', 'interface/stlink-v2.cfg', '-f' , 'target/stm32f3x.cfg'])
-```
-
-I can now with `ninja openocd` start a new openocd session in a new terminal window.
-
-And with `ninja gdb` I start a new gdb session. (with the parameters executed in the file `.gdbinit`)

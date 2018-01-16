@@ -37,7 +37,7 @@ sudo apt-get -y clang-5.0 clang-5.0-doc libclang-common-5.0-dev libclang-5.0-dev
 
 ## Meson Build
 
-After that we of course need the [meson build](http://mesonbuild.com/) system.
+After that we need the [meson build](http://mesonbuild.com/) system.
 Also Python3 is needed.
 
 ```bash
@@ -75,7 +75,7 @@ make
 sudo make install
 ```
 
-this installs version 0.10 besides your current openocd installation. you have to call `/usr/local/bin/openocd` instead of just `openocd` to use the newer version
+this installs version 0.10 besides your current openocd installation. You have to call `/usr/local/bin/openocd` instead of just `openocd` to use the newer version
 
 a quick and dirty alternative is to overwrite the old openocd binary in `/usr/bin/openocd`
 
